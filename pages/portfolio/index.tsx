@@ -78,7 +78,7 @@ const Portfolio: NextPage = () => {
 
       <main className='mx-auto'>
       <section className='grid grid-cols-1 mb-5'>
-          <a href="https://github.com/jshetler7" target='_blank' rel="external" className="place-self-center flex flex-col items-center bg-white rounded-lg border shadow-lg max-w-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <a href="https://github.com/jshetler7" target='_blank' rel="noreferrer" className="place-self-center flex flex-col items-center bg-white rounded-lg border shadow-lg max-w-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
             <AiOutlineGithub style={styleLight} className='object-cover w-1/2 h-40 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg dark:hidden'/>
             <AiOutlineGithub style={styleDark} className='object-cover w-1/2 h-40 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg hidden dark:inline-block'/>
             <div className="flex flex-col justify-between p-4 leading-normal">
@@ -102,13 +102,13 @@ const Portfolio: NextPage = () => {
                   ))}
                 </div>
                 <div className='grid place-self-end'>
-                    <a href={data.Github} target='_blank' rel="external" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg dark:text-white dark:bg-green-600">
+                    <a href={data.Github} target='_blank' rel="noreferrer" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg dark:text-white dark:bg-green-600">
                         {data.tagHub}
                         <VscArrowRight size={14}/>
                     </a>
                 </div>
                 <div className={`grid place-self-end ${data.isHidden}`}>
-                    <a href={data.url} target='_blank' rel="external" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg dark:text-black dark:bg-neutral-100">
+                    <a href={data.url} target='_blank' rel="noreferrer" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg dark:text-black dark:bg-neutral-100">
                         {data.tagLive}
                         <VscArrowRight size={14}/>
                     </a>
