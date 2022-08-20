@@ -24,7 +24,7 @@ const Home: NextPage = () => {
               August 2022
               <p className='text-center text-xl text-black dark:text-white'>Built and Deployed Two Full-Stack Applications</p>
               <a href='https://calessia.herokuapp.com/' className='text-lg'>Calessia, </a>
-              <a href='/' className='text-lg'>Portfolio</a>
+              <p className='text-lg'>Portfolio</p>
             </div>
             {/* Line */}
             <div className='bar w-1 justify-self-center relative gradient-background'></div>

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
 import { VscArrowRight } from 'react-icons/vsc';
 import { AiOutlineGithub } from 'react-icons/ai';
@@ -7,10 +8,10 @@ import { useEffect } from 'react';
 
 const Portfolio: NextPage = () => {
 
-  // useEffect(() => {
-  //   fetch('https://calessia.herokuapp.com/');
-  //   fetch('https://bloggr-full.herokuapp.com/');
-  // }, []);
+  useEffect(() => {
+    fetch('https://calessia.herokuapp.com/');
+    fetch('https://bloggr-full.herokuapp.com/');
+  }, []);
 
   const projects = [
     {
@@ -77,7 +78,7 @@ const Portfolio: NextPage = () => {
 
       <main className='mx-auto'>
       <section className='grid grid-cols-1 mb-5'>
-          <a href="https://github.com/jshetler7" target='_blank' className="place-self-center flex flex-col items-center bg-white rounded-lg border shadow-lg max-w-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <a href="https://github.com/jshetler7" target='_blank' rel="external" className="place-self-center flex flex-col items-center bg-white rounded-lg border shadow-lg max-w-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
             <AiOutlineGithub style={styleLight} className='object-cover w-1/2 h-40 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg dark:hidden'/>
             <AiOutlineGithub style={styleDark} className='object-cover w-1/2 h-40 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg hidden dark:inline-block'/>
             <div className="flex flex-col justify-between p-4 leading-normal">
@@ -90,24 +91,24 @@ const Portfolio: NextPage = () => {
         <hr className='mb-5 border border-gray-300'/>
         <section className='grid grid-cols-1 gap-y-10 mb-10'>
           {projects.map(data => (
-            <div id='card' className="place-self-center mt-5 max-w-md 2xl:w-1/2 rounded-lg border border-gray-300 hover:bg-slate-50 dark:hover:bg-gray-700 dark:border-gray-600 dark:bg-gray-800">
-                <img className="rounded-t-lg" src={data.picture} alt="" />
+            <div id='card' key={data.title} className="place-self-center mt-5 max-w-md 2xl:w-1/2 rounded-lg border border-gray-300 hover:bg-slate-50 dark:hover:bg-gray-700 dark:border-gray-600 dark:bg-gray-800">
+                <Image className="rounded-t-lg" src={data.picture} width={600} height={300} alt="" />
               <div className="" id='card-body'>
                   <h5 className="ml-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h5>
                 <p className="ml-1 font-medium md:font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
                 <div className="grid grid-rows-3 grid-cols-4 md:grid-cols-5 mt-2 mb-5">
                   {data.skills.map(item => (
-                    <span className="items-center py-1 px-1 m-1 text-sm font-medium text-center text-white bg-blue-300 rounded-lg dark:bg-sky-600">{item}</span>
+                    <span key={`${item}-${data.title}`} className="items-center py-1 px-1 m-1 text-sm font-medium text-center text-white bg-blue-300 rounded-lg dark:bg-sky-600">{item}</span>
                   ))}
                 </div>
                 <div className='grid place-self-end'>
-                    <a href={data.Github} target='_blank' className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg dark:text-white dark:bg-green-600">
+                    <a href={data.Github} target='_blank' rel="external" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg dark:text-white dark:bg-green-600">
                         {data.tagHub}
                         <VscArrowRight size={14}/>
                     </a>
                 </div>
                 <div className={`grid place-self-end ${data.isHidden}`}>
-                    <a href={data.url} target='_blank' className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg dark:text-black dark:bg-neutral-100">
+                    <a href={data.url} target='_blank' rel="external" className="inline-flex place-self-end items-center py-2 px-3 mr-2 mb-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg dark:text-black dark:bg-neutral-100">
                         {data.tagLive}
                         <VscArrowRight size={14}/>
                     </a>
