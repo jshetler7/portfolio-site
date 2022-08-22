@@ -8,11 +8,6 @@ import { useEffect } from 'react';
 
 const Portfolio: NextPage = () => {
 
-  // useEffect(() => {
-  //   fetch('https://calessia.herokuapp.com/');
-  //   fetch('https://bloggr-full.herokuapp.com/');
-  // }, []);
-
   const projects = [
     {
       title: 'Calessia',
@@ -79,7 +74,7 @@ const Portfolio: NextPage = () => {
             </div>
           </a>
         </section>
-        <h1 className='text-5xl font-semibold py-2 text-center dark:text-white'>Full-Stack Applications</h1>
+        <h1 className='text-5xl font-semibold py-2 text-center text-black dark:text-white'>Full-Stack Applications</h1>
         <hr className='mb-5 border border-gray-300'/>
         <section className='grid grid-cols-1 gap-y-10 mb-10'>
           {projects.map(data => (

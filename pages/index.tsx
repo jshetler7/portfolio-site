@@ -1,15 +1,26 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useEffect } from 'react';
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    Promise.allSettled([
+      fetch('https://calessia.herokuapp.com/'),
+      fetch('https://bloggr-full.herokuapp.com/')
+    ])
+    .then(resArray => Promise.allSettled(resArray.map(res => res.status === 'fulfilled' ? res.value.json() : Promise.reject('Failed :('))))
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+  }, []);
 
   return (
     <div>
 
 
       <main className='container mx-auto'>
-        <h1 className="text-6xl text-center mt-5 dark:text-white">
+        <h1 className="text-6xl text-center text-black mt-5 dark:text-white">
           Hello There!
         </h1>
         <section className="grid grid-rows-1 mb-10">

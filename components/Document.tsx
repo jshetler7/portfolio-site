@@ -22,8 +22,8 @@ export default function PDFViewer() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 mb-5">
-        <Document file={file} onLoadSuccess={onDocumentLoadSuccess} className='grid place-self-center max-w-lg mt-5' options={options}>
+      <div className="grid mb-5">
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess} className='grid place-self-center mt-5' options={options}>
         {Array.from(new Array(numPages), (el, index) => (
               <Page key={`page_${index + 1}`} pageNumber={index + 1} />
             ))}
