@@ -7,8 +7,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     Promise.allSettled([
-      fetch('https://calessia.herokuapp.com/'),
-      fetch('https://bloggr-full.herokuapp.com/')
+      fetch('https://calessia.fly.dev/')
     ])
     .then(resArray => Promise.allSettled(resArray.map(res => res.status === 'fulfilled' ? res.value.json() : Promise.reject('Failed :('))))
     .then(data => console.log(data))
