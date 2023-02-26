@@ -13,7 +13,7 @@ const Portfolio: NextPage = () => {
       title: 'Calessia',
       description: 'A full-stack web application to enhance productivity and organization for writers.',
       details: "",
-      url: 'https://calessia.herokuapp.com/',
+      url: 'https://calessia.fly.dev/',
       Github: 'https://github.com/jshetler7',
       tagHub: 'View on Github',
       tagLive: "It's live!",
@@ -39,6 +39,7 @@ const Portfolio: NextPage = () => {
       Github: 'https://github.com/jshetler7/full-stack-blog',
       tagLive: "It's Live!",
       tagHub: "View on Github",
+      isHidden: 'hidden',
       picture: 'https://picsum.photos/id/10/600/300',
       skills: ['React', 'Node', 'Express', 'JWT', 'Typescript', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'SQL', 'Heroku', 'REST API']
     },
