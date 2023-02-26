@@ -5,14 +5,14 @@ import { useEffect } from 'react';
 
 const Home: NextPage = () => {
 
-  useEffect(() => {
-    Promise.allSettled([
-      fetch('https://calessia.fly.dev/')
-    ])
-    .then(resArray => Promise.allSettled(resArray.map(res => res.status === 'fulfilled' ? res.value.json() : Promise.reject('Failed :('))))
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-  }, []);
+  // useEffect(() => {
+  //   Promise.allSettled([
+  //     fetch('https://calessia.fly.dev/')
+  //   ])
+  //   .then(resArray => Promise.allSettled(resArray.map(res => res.status === 'fulfilled' ? res.value.json() : Promise.reject('Failed :('))))
+  //   .then(data => console.log(data))
+  //   .catch(error => console.error(error));
+  // }, []);
 
   return (
     <div>
